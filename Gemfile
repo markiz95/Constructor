@@ -27,7 +27,13 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'angularjs-rails'
+
 gem 'bootstrap-sass'
+gem 'font-awesome-rails'
+
+gem 'rails-jquery-autocomplete'
+gem 'jquery-ui-rails'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-vk'

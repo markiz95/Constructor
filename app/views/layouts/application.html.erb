@@ -1,46 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebConstructor</title>
-    <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "autocomplete-rails.js" %>
+    <%= csrf_meta_tags %>
+
   </head>
 
   <body>
-    <nav class="navbar navbar-inverse">
-    <div class="container">
-      <div class="navbar-header">
-        <%= link_to 'Social Freak', root_path, class: 'navbar-brand' %>
-      </div>
-      <div id="navbar">
-        <% if current_user %>
-          <ul class="nav navbar-nav pull-right">
-            <li><%= image_tag current_user.image_url, alt: current_user.name %></li>
-            <li><%= link_to 'Log Out', '/logout', method: :delete %></li>
-          </ul>
-        <% else %>
-          <ul class="nav navbar-nav">
-            <ul class="nav navbar-nav">
-              <li><%= link_to 'Twitter', '/auth/twitter' %></li>
-              <li><%= link_to 'Facebook', '/auth/facebook' %></li>
-              <li><%= link_to 'Vk', '/auth/vkontakte' %></li>
-            </ul>
-          </ul>
-        <% end %>
-      </div>
-    </div>
-  </nav>
 
-  <div class="container">
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>">
-        <%= value %>
-      </div>
-    <% end %>
+      <!-- Wrapper-->
+      <div id="wrapper">
 
-    <%= yield %>
-  </div>
+          <!-- Navigation -->
+          <%= render 'layouts/navigation' %>
+
+          <!-- Page wraper -->
+          <div id="page-wrapper" class="gray-bg">
+
+              <!-- Page wrapper -->
+              <%= render 'layouts/topnavbar' %>
+
+              <!-- Main view  -->
+              <%= yield %>
+
+              <!-- Footer -->
+              <%= render 'layouts/footer' %>
+
+          </div>
+          <!-- End page wrapper-->
+
+      </div>
+      <!-- End wrapper-->
+
   </body>
 </html>

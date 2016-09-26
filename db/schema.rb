@@ -10,20 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160924183250) do
+ActiveRecord::Schema.define(version: 20160925172811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
-    t.string   "imageable_type"
-    t.integer  "imageable_id"
+    t.string   "commentable_type"
+    t.integer  "commentable_id"
     t.integer  "user_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["imageable_type", "imageable_id"], name: "index_comments_on_imageable_type_and_imageable_id", using: :btree
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id", using: :btree
     t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
+  end
+
+  create_table "layouts", force: :cascade do |t|
+    t.text     "body",       null: false
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "pages", force: :cascade do |t|
@@ -31,6 +38,8 @@ ActiveRecord::Schema.define(version: 20160924183250) do
     t.integer  "site_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "layout_id"
+    t.index ["layout_id"], name: "index_pages_on_layout_id", using: :btree
     t.index ["site_id"], name: "index_pages_on_site_id", using: :btree
   end
 

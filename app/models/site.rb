@@ -1,7 +1,7 @@
 class Site < ApplicationRecord
   belongs_to :user
-  has_many :pages, dependent :destroy
-  has_many :comments, as: commentable
+  has_many :pages, dependent: :destroy
+  has_many :comments, as: :commentable
   has_many :taggings
   has_many :tags, through: :taggings
 
