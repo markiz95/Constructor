@@ -1,0 +1,19 @@
+{:uriI"ˆfile://app/assets/javascripts/angularApp/main.html?type=text/ng-html&id=68aef517ef26b9547b32cf14a4769855acaa28b141d490883196ca1ebdc5d18f:ET:load_pathI"app/assets/javascripts;T:filenameI"0app/assets/javascripts/angularApp/main.html;T:	nameI"angularApp/main;T:logical_pathI"angularApp/main.html;T:content_typeI"text/ng-html;T:sourceI"‚<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="text-center m-t-lg">
+                <h1>
+                    {{main.helloText}}
+                </h1>
+                <small>
+                    {{main.descriptionText}}
+                </small>
+            </div>
+        </div>
+    </div>
+</div>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI">file-digest://app/assets/javascripts/angularApp/main.html;TTF:charsetI"
+utf-8;F:digest"%¦ÃsÃM`Ü˜d’„·7ˆïxÔY.ª‘8ÏFÉ&Ô:lengthi‚:dependencies_digest"%ÀP,‹¢w0hÕRvdr¸ƒ5NI÷Ñ«[&{GY29:idI"E68aef517ef26b9547b32cf14a4769855acaa28b141d490883196ca1ebdc5d18f;F:
+mtimel+ûèW

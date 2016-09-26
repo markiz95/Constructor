@@ -17,9 +17,7 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+# gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -27,17 +25,21 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'angularjs-rails'
-
+gem 'angular-rails-templates'
+gem "bower-rails", "~> 0.11.0"
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 
+#autocomplete
 gem 'rails-jquery-autocomplete'
 gem 'jquery-ui-rails'
+
+# omni
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-vk'
 gem 'omniauth-vkontakte'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

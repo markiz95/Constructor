@@ -10,13 +10,15 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require angular
+//= require angular-ui-router
+//= require angular-rails-templates
 //= require jquery/jquery-2.1.1.js
 //= require bootstrap-sprockets
-//= require metisMenu/jquery.metisMenu.js
 //= require pace/pace.min.js
+//= require metisMenu/jquery.metisMenu.js
 //= require slimscroll/jquery.slimscroll.min.js
-//= require jquery_ujs
 //= require jquery-ui/autocomplete
 //= require autocomplete-rails
 //= require_tree .
-//= require angular
+//= require_tree ../templates

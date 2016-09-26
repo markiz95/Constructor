@@ -1,0 +1,11 @@
+{:uriI"ˆfile://app/assets/javascripts/angularApp/home.html?type=text/ng-html&id=e68dd4f49e3a0615cc9f379df350c6e06d74ac46ea6d32d5eb51343213314d26:ET:load_pathI"app/assets/javascripts;T:filenameI"0app/assets/javascripts/angularApp/home.html;T:	nameI"angularApp/home;T:logical_pathI"angularApp/home.html;T:content_typeI"text/ng-html;T:sourceI"…<div class="container">
+    <h1>The Home View!</h1>
+    <ul>
+        <li ng-repeat="thing in things">{{thing}}</li>
+    </ul>
+</div>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI">file-digest://app/assets/javascripts/angularApp/home.html;TTF:charsetI"
+utf-8;F:digest"%ª”îUÎ]ŒH] ¯93ªijç!Ùofv…²¸¦\:lengthi…:dependencies_digest"%Vá¬¸÷:ìƒI¸ÔùíëÙgp_´k?_ç‹Ò¯+'…œü:idI"Ee68dd4f49e3a0615cc9f379df350c6e06d74ac46ea6d32d5eb51343213314d26;F:
+mtimel+ÞþèW

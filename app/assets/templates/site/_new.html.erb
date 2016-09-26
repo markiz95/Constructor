@@ -1,0 +1,24 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h2>New Site</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="ibox float-e-margins">
+      <div class="ibox-content">
+        <form accept-charset="UTF-8" action="/sites" method="post" class="form-horizontal">
+          <div class="form-group"><label class="col-sm-2 control-label">Название</label>
+              <div class="col-sm-10"><input id="site_name" name="site[name]" type="text" class="form-control"></div>
+          </div>
+          <div class="hr-line-dashed"></div>
+          <div class="form-group"><label class="col-sm-2 control-label">Тэги</label>
+              <div class="col-sm-10"><input id="site_tag_list" name="site[tag_list]" type="text" class="form-control" data-autocomplete="/sites/autocomplete_tag_name"> <span class="help-block m-b-none">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+              </div>
+          </div>
+          <button class="btn btn-primary" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
