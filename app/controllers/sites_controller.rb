@@ -1,21 +1,21 @@
 class SitesController < ApplicationController
   autocomplete :tag, :name, :full => true
-
   def new
-    @site = Site.new
   end
-
   def create
-    @site = Site.new(site_params)
-    if @site.save?
-      redirect_to sites_path(@site)
-    else
-      render new
-    end
+    # @site = Site.new(site_params)
+    # if @site.save?
+    #   redirect_to sites_path(@site)
+    # else
+    #   render new
+    # end
   end
 
   def show
     @site = Site.find(params[:id])
+  end
+  def index
+
   end
 
   private

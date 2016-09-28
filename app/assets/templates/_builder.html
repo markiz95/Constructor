@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="row">
+    <ul class="nav navbar-nav navbar-right" style="margin-right: 3em">
+
+      <li><a href="#">Сохранить</a></li>
+      <li><a href="#">Предпросмотр</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle right-sidebar-toggle">Страницы <span class="caret"></span></a>
+      </li>
+    </ul>
+
+  </div>
+
+  <textarea froala ng-model="myHtml"></textarea>
+
+</div>
+<div id="right-sidebar">
+  <div class="sidebar-container">
+    <div class="sidebar-title">
+      <h3> <i class="fa fa-comments-o"></i> Страницы</h4>
+    </div>
+
+    <ul id="sortable" >
+      <li ng-repeat="page in pages" class=page><i class="fa fa-th"></i>{{ page }}</i></li>
+    </ul>
+
+    <div class="sidebar-content">
+      <button type="button" class="btn btn-w-m btn-success">+ Добавить страницу</button>
+    </div>
+  </div>
+</div>

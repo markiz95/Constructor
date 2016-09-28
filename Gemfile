@@ -17,7 +17,7 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-# gem 'jquery-rails'
+gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -29,7 +29,7 @@ gem 'angular-rails-templates'
 gem "bower-rails", "~> 0.11.0"
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
-
+gem "wysiwyg-rails"
 #autocomplete
 gem 'rails-jquery-autocomplete'
 gem 'jquery-ui-rails'
