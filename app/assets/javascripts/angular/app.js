@@ -1,4 +1,4 @@
-angular.module('pageBuilder', ['ui.router', 'templates', 'froala'])
+angular.module('pageBuilder', ['ui.router', 'templates', 'froala', 'xeditable', 'ui.sortable'])
     .config(
       function($stateProvider, $urlRouterProvider, $locationProvider) {
 
@@ -22,9 +22,9 @@ angular.module('pageBuilder', ['ui.router', 'templates', 'froala'])
           })
 
           .state('Site', {
-            url: '/sites/new',
-            template: '_home.html',
-            controller: 'MainCtrl'
+            url: '/newSite',
+            templateUrl: 'site/_new.html',
+            controller: 'BuildCtrl'
           });
 
           $locationProvider.html5Mode({
@@ -39,15 +39,8 @@ angular.module('pageBuilder', ['ui.router', 'templates', 'froala'])
           toolbarInline: false,
           placeholderText: 'Enter Text Here',
           dragInline: true
+      })
+
+      .run(function(editableOptions) {
+        editableOptions.theme = 'bs3';
       });
-
-
-// <div class=\"col-sm-4\">\ forcePlaceholderSize: true,
-//        One of three columns\n\n\n\n\n\n\n\
-//      </div>\
-//      <div class=\"col-sm-4\">\
-//        One of three columns\n\n\n\n\n\n\n\
-//      </div>\
-//      <div class=\"col-sm-4\">\
-//        One of three columns\n\n\n\n\n\n\n\
-//      </div>

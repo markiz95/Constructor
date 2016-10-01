@@ -1,9 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <ul class="nav navbar-nav navbar-right" style="margin-right: 3em">
-
       <li><a href="#">Сохранить</a></li>
-      <li><a href="#">Предпросмотр</a></li>
       <li class="dropdown">
         <a class="dropdown-toggle right-sidebar-toggle">Страницы <span class="caret"></span></a>
       </li>
@@ -11,21 +9,72 @@
 
   </div>
 
-  <textarea froala ng-model="myHtml"></textarea>
-
+  <textarea froala="froalaOptions" ng-model="currentPageContent" id="editor"></textarea>
 </div>
+
+<!-- Pages -->
 <div id="right-sidebar">
   <div class="sidebar-container">
     <div class="sidebar-title">
       <h3> <i class="fa fa-comments-o"></i> Страницы</h4>
     </div>
 
-    <ul id="sortable" >
-      <li ng-repeat="page in pages" class=page><i class="fa fa-th"></i>{{ page }}</i></li>
+    <ul id="sortable" ui-sortable ng-model="pages">
+      <li ng-repeat="page in pages" class="page"editable-text="page.title" ng-class="getClass($index)" ng-click="changePage(page)">{{ page.title ||'empty'}}<i class="fa fa-trash-o" id="trash" ng-click="removePage(page)" ></i></li>
     </ul>
 
     <div class="sidebar-content">
-      <button type="button" class="btn btn-w-m btn-success">+ Добавить страницу</button>
+      <button type="button" class="btn btn-w-m btn-success" ng-click="showModal()">Добавить страницу</button>
     </div>
   </div>
+</div>
+<h2>{{count}}</h2>
+
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Это последняя страница<i class="fa fa-times close"></i></h2>
+    </div>
+    <div class="modal-body">
+      <p><em><span style="font-size: 18px; font-family: Arial, Helvetica, sans-serif; color: rgb(71, 85, 119);">Сайт не может существовать без хотя бы одной страницы!
+        Не удаляйте её.</span></em></p>
+    </div>
+  </div>
+
+</div>
+<div id="newPage" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Новая страница<i class="fa fa-times close" ng-click="hideModal()"></i></h2>
+    </div>
+    <div class="modal-body">
+      <form role="form">
+        <div class="form-group"><label> Название </label><input type="text" ng-model="newPageTitle" class="form-control"></div>
+        <div class="form-group">
+          <label> Layout </label>
+          <select ng-model="currentLayout" class="form-control">
+            <option ng-repeat="layout in layouts" value="{{layout.body}}">{{ layout.name }}</option>
+          </select>
+        </div>
+      </form>
+      <!-- <form role="form" id="new-layout">
+        <button class="btn btn-xs btn-outline btn-primary">New</button>
+        <div class="form-group">
+          <label>Name</label><input type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Layout</label><textarea class="form-control" value="">
+        </div>
+        <button class="btn btn-xs btn-outline btn-success">Create</button>
+     </form> -->
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" id ="add-new-page"ng-click="addPage(); hideModal()">Добавить</button>
+    </div>
+  </div>
+
 </div>

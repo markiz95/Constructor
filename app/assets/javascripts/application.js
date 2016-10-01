@@ -29,6 +29,7 @@
 //= require plugins/inline_style.min.js
 //= require plugins/line_breaker.min.js
 //= require plugins/link.min.js
+//= require languages/ru.js
 //= require plugins/lists.min.js
 //= require plugins/paragraph_format.min.js
 //= require plugins/paragraph_style.min.js

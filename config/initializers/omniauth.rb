@@ -7,7 +7,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
       :lang => 'en',
       :https => 1,
       :image_size => 'mini',
-      :redirect_url => 'http://localhost:3000/auth/vkontakte/callback'
+      :redirect_url => 'https://localhost:3000/auth/vkontakte/callback'
       # https://shrouded-wave-77742.herokuapp.com/auth/vkontakte/callback
   }
   provider :facebook, '153356695109014', '4bd7acd3fb51837e3e8e82c002841e8e',

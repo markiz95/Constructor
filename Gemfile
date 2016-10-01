@@ -30,6 +30,7 @@ gem "bower-rails", "~> 0.11.0"
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem "wysiwyg-rails"
+
 #autocomplete
 gem 'rails-jquery-autocomplete'
 gem 'jquery-ui-rails'
@@ -39,6 +40,9 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-vk'
 gem 'omniauth-vkontakte'
+
+# json
+gem "responders"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
