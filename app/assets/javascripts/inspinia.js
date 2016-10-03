@@ -57,9 +57,7 @@ $(document).ready(function () {
     });
 
     // Open close right sidebar
-    $('.right-sidebar-toggle').click(function () {
-        $('#right-sidebar').toggleClass('sidebar-open');
-    });
+    
 
     // Initialize slimscroll for right sidebar
     $('.sidebar-container').slimScroll({

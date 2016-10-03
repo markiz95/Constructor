@@ -1,0 +1,32 @@
+
+<div class="wrapper wrapper-content animated fadeInLeft" style="height: 100%">
+<div class="ibox">
+<div class="ibox-content">
+<div class="row">
+    <div class="col-lg-12">
+        <div class="m-b-md">
+            <a href="#" class="btn btn-white btn-xs pull-right">Edit project</a>
+            <h2>{{site.name}}</h2>
+        </div>
+    </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+      <dl class="dl-horizontal">
+
+          <dt>Created by:</dt>
+          <dd>{{site.user.name}}</dd>
+          <dt>Last Updated:</dt>
+          <dd>{{site.updated_at}}</dd>
+          <dt>Created:</dt>
+          <dd>{{site.created_at}}</dd>
+      </dl>
+      <ul class="tag-list" style="padding: 0" ng-repeat="tag in site.tags">
+          <li><a href=""><i class="fa fa-tag"></i> {{tag.name}}</a></li>
+      </ul>
+  </div>
+  <div class="col-lg-12 page-view" ng-bind-html="site.pages[0].body"></div>
+</div>
+</div>
+</div>
+</div>

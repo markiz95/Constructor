@@ -11,7 +11,7 @@
       <div class="ibox-content">
         <form accept-charset="UTF-8" action="/sites" method="post" class="form-horizontal">
           <div class="form-group"><label class="col-sm-2 control-label">Название</label>
-              <div class="col-sm-10"><input id="site_name" name="site[name]" type="text" class="form-control"></div>
+              <div class="col-sm-10"><input id="site_name" name="site[name]" type="text" class="form-control" ng-model="siteName"></div>
           </div>
           <div class="hr-line-dashed"></div>
           <div class="form-group"><label class="col-sm-2 control-label">Тэги</label>
@@ -19,7 +19,11 @@
                 <ul id="myTags"></ul>
               </div>
           </div>
-          <button class="btn btn-primary" type="submit">Сохранить</button>
+          <div class="form-group">
+            <div class="col-sm-10 col-md-offset-2">
+              <a class="btn btn-primary" type="submit" ng-click="toBuilder()">Сохранить</a>
+            </div>
+          </div>
         </form>
       </div>
     </div>
@@ -28,26 +32,3 @@
 
 
 <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css">
-<script type="text/javascript">
-$(document).ready(function() {
-  $.getJSON("/tags.json", function(data){
-    var items = [];
-  $.each( data, function( key ) {
-    items.push( "<li>" + val + "</li>" );
-  });
-
-  $( "<ul/>", {
-    "class": "my-new-list",
-    html: items.join( "" )
-  }).appendTo( "body" );
-  });
-
-  var tags = [];
-
- console.log(tags);
-  $("#myTags").tagit({
-    availableTags: tags,
-    autocomplete: {delay: 0, minLength: 1}
-  });
-});
-</script>

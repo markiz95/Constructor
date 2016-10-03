@@ -30,15 +30,12 @@ gem "bower-rails", "~> 0.11.0"
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem "wysiwyg-rails"
-
-#autocomplete
-gem 'rails-jquery-autocomplete'
 gem 'jquery-ui-rails'
+# gem 'angular_rails_csrf'
 
 # omni
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
-gem 'omniauth-vk'
 gem 'omniauth-vkontakte'
 
 # json

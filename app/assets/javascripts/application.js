@@ -8,7 +8,6 @@
 //= require pace/pace.min.js
 //= require metisMenu/jquery.metisMenu.js
 //= require slimscroll/jquery.slimscroll.min.js
-//= require autocomplete-rails
 //= require_tree .
 //= require_tree ../templates
 // Include other plugins.

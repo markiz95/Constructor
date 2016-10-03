@@ -1,16 +1,15 @@
 <div class="container-fluid">
   <div class="row">
     <ul class="nav navbar-nav navbar-right" style="margin-right: 3em">
-      <li><a href="#">Сохранить</a></li>
+      <li><a href="#" ng-click="save()">Сохранить</a></li>
       <li class="dropdown">
         <a class="dropdown-toggle right-sidebar-toggle">Страницы <span class="caret"></span></a>
       </li>
     </ul>
-
   </div>
-
-  <textarea froala="froalaOptions" ng-model="currentPageContent" id="editor"></textarea>
 </div>
+
+<textarea froala="froalaOptions" ng-model="currentPageContent" id="editor"></textarea>
 
 <!-- Pages -->
 <div id="right-sidebar">
@@ -20,7 +19,7 @@
     </div>
 
     <ul id="sortable" ui-sortable ng-model="pages">
-      <li ng-repeat="page in pages" class="page"editable-text="page.title" ng-class="getClass($index)" ng-click="changePage(page)">{{ page.title ||'empty'}}<i class="fa fa-trash-o" id="trash" ng-click="removePage(page)" ></i></li>
+      <li ng-repeat="page in pages" class="page"editable-text="page.name" ng-class="getClass($index)" ng-click="changePage(page)">{{ page.name ||'empty'}}<i class="fa fa-trash-o" id="trash" ng-click="removePage(page)" ></i></li>
     </ul>
 
     <div class="sidebar-content">
@@ -28,7 +27,6 @@
     </div>
   </div>
 </div>
-<h2>{{count}}</h2>
 
 <div id="myModal" class="modal">
 
@@ -53,7 +51,7 @@
     </div>
     <div class="modal-body">
       <form role="form">
-        <div class="form-group"><label> Название </label><input type="text" ng-model="newPageTitle" class="form-control"></div>
+        <div class="form-group"><label> Название </label><input type="text" ng-model="newPageName" class="form-control"></div>
         <div class="form-group">
           <label> Layout </label>
           <select ng-model="currentLayout" class="form-control">
