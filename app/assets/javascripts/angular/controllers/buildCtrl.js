@@ -119,7 +119,6 @@ angular.module('pageBuilder').controller("BuildCtrl", function($scope, $http, sa
       fontFamilySelection: true,
       tabSpaces: 4,
       language: 'ru',
-      enter: $.FroalaEditor.ENTER_BR,
 
       imageUploadURL: '	https://api.cloudinary.com/v1_1/page-builder/image/upload',
 

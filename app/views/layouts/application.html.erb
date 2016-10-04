@@ -25,12 +25,12 @@
 
               <!-- Page wrapper -->
               <%= render 'layouts/topnavbar' %>
-
+              
               <!-- Main view  -->
               <ui-view></ui-view>
 
               <!-- Footer -->
-            <%=  render 'layouts/footer' %>
+            <div ng-include="'_footer.html'"></div>
 
           </div>
           <!-- End page wrapper-->

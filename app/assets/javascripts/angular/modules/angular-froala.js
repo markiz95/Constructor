@@ -208,6 +208,7 @@ value('froalaConfig', {})
     };
 }])
 .directive('froalaView', ['$sce', function ($sce) {
+  
 	return {
 		restrict: 'ACM',
 		scope: false,

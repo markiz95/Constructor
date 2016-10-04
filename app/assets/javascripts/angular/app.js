@@ -1,4 +1,4 @@
-angular.module('pageBuilder', ['ui.router', 'templates', 'froala', 'xeditable', 'ui.sortable', 'ngSanitize'])
+angular.module('pageBuilder', ['ui.router', 'templates', 'froala', 'xeditable', 'ui.sortable', 'ngSanitize', 'yaru22.angular-timeago'])
     .config(
       function($stateProvider, $urlRouterProvider, $locationProvider) {
 
@@ -17,8 +17,8 @@ angular.module('pageBuilder', ['ui.router', 'templates', 'froala', 'xeditable', 
 
           .state('sites', {
             url: '/sites',
-            templateUrl: '_home.html',
-            controller: 'SiteCtrl'
+            templateUrl: 'site/_index.html',
+            controller: 'SiteViewCtrl'
           })
 
           .state('show', {

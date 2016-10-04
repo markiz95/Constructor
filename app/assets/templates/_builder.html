@@ -28,26 +28,30 @@
   </div>
 </div>
 
-<div id="myModal" class="modal">
-
+<div id="myModal" class="modal inmodal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog">
   <!-- Modal content -->
-  <div class="modal-content">
+  <div class="modal-content animated bounceInRight">
     <div class="modal-header">
-      <h2>Это последняя страница<i class="fa fa-times close"></i></h2>
+      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <i class="fa fa-exclamation-triangle modal-icon"></i>
+      <h4 class="modal-title">Это последняя страница</h4>
     </div>
     <div class="modal-body">
       <p><em><span style="font-size: 18px; font-family: Arial, Helvetica, sans-serif; color: rgb(71, 85, 119);">Сайт не может существовать без хотя бы одной страницы!
         Не удаляйте её.</span></em></p>
     </div>
   </div>
-
 </div>
-<div id="newPage" class="modal">
+</div>
 
+<div id="newPage" class="modal inmodal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
   <!-- Modal content -->
-  <div class="modal-content">
+  <div class="modal-content animated bounceInRight">
     <div class="modal-header">
-      <h2>Новая страница<i class="fa fa-times close" ng-click="hideModal()"></i></h2>
+      <button type="button" class="close" data-dismiss="modal" ng-click=" hideModal()"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4 class="modal-title">Новая страница</h4>
     </div>
     <div class="modal-body">
       <form role="form">
@@ -71,8 +75,9 @@
      </form> -->
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-primary" id ="add-new-page"ng-click="addPage(); hideModal()">Добавить</button>
+      <button type="button" class="btn btn-white" ng-click=" hideModal()" >Close</button>
+      <button type="button" class="btn btn-primary" id ="add-new-page" ng-click="addPage(); hideModal()">Добавить</button>
     </div>
   </div>
-
+  </div>
 </div>

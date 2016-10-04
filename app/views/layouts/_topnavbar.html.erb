@@ -8,15 +8,17 @@
                 </div>
             </form>
         </div>
-        <ul class="nav navbar-top-links navbar-right">
-          <% if current_user %>
+        <% if current_user %>
+          <ul class="nav navbar-top-links navbar-right">
             <li><%= link_to 'Create site', '/sites/new' %></li>
             <li><%= link_to raw('<i class="fa fa-sign-out"></i> Log out'), '/logout', method: :delete %></li>
-          <% else %>
-            <li><%= link_to 'Twitter', '/auth/twitter' %></li>
-            <li><%= link_to 'Facebook', '/auth/facebook' %></li>
-            <li><%= link_to 'Vk', '/auth/vkontakte' %></li>
-          <% end %>
-        </ul>
+          </ul>
+        <% else %>
+          <ul class="socials navbar-right">
+            <li><a href="/auth/twitter" class="btn btn-social-icon btn-twitter"><span class="fa fa-twitter"></span></a>
+            <li><a href="/auth/facebook" class="btn btn-social-icon btn-facebook"><span class="fa fa-facebook"></span></a>
+            <li><a href="/auth/vkontakte" class="btn btn-social-icon btn-vk"><span class="fa fa-vk"></span></a>
+          </ul>
+        <% end %>
     </nav>
 </div>

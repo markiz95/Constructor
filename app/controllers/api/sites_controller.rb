@@ -8,7 +8,8 @@ class Api::SitesController < ApplicationController
     else
       sites = Site.all
     end
-    respond_with sites
+    respond_with sites.as_json(
+      include: [{ user: { only: [:image_url, :name] } }, { tags: { only: :name } }])
   end
 
   def create
@@ -27,6 +28,12 @@ class Api::SitesController < ApplicationController
 
   def updated
     respond_with Site.update(params[:id], site_params)
+  end
+
+  def destroy
+    site = Site.find(params[:id])
+    site.destroy
+    respond_with { head :no_content }
   end
 
   private

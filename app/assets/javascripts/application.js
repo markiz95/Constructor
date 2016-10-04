@@ -2,6 +2,7 @@
 //= require jquery-ui
 //= require angular
 //= require angular-ui-router
+//= require angular-timeago
 //= require angular-rails-templates
 //= require froala_editor.min.js
 //= require bootstrap-sprockets
