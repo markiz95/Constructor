@@ -63,6 +63,10 @@
   margin: auto;
 }
 
+#new-comment{
+  margin: 5px 0;
+}
+
 .btn-facebook {
     color: #fff;
     background-color: #3b5998;
@@ -126,5 +130,8 @@
   float: right;
   font-size: 28px;
   text-decoration: none;
+  cursor: pointer;
+}
+#tag-cloud span {
   cursor: pointer;
 }

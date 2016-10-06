@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :sites, dependent: :destroy
+  has_many :comments
 
   def self.from_omniauth(auth)
     find_by_provider_and_uid(auth["provider"], auth["uid"]) || create_with_omniauth(auth)

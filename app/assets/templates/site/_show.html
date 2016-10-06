@@ -20,6 +20,8 @@
           <dd>{{site.updated_at | timeAgo}}</dd>
           <dt>Created:</dt>
           <dd>{{site.created_at | timeAgo}}</dd>
+          <dt>Views:</dt>
+          <dd>{{site.views}}</dd>
       </dl>
       <ul class="tag-list" style="padding: 0" ng-repeat="tag in site.tags">
           <li><a href=""><i class="fa fa-tag"></i> {{tag.name}}</a></li>
@@ -27,6 +29,28 @@
   </div>
   <div class="col-lg-12 page-view" froala-view="currentPageContent" ></div>
 </div>
+
 </div>
+<div class="social-footer">
+    <div class="social-comment" ng-repeat="comment in site.comments | orderBy:'-created_at' ">
+        <a href="" class="pull-left">
+            <img alt="image" src="{{comment.user.image_url}}">
+        </a>
+        <div class="media-body">
+            <a href="#">{{comment.user.name}}</a>
+            {{comment.body}}
+            <br/>
+            <small class="text-muted">{{comment.created_at | date : format : mediumDate}}</small>
+        </div>
+    </div>
+    <div class="social-comment">
+        <a href="" class="pull-left">
+            <img alt="image" src="{{site.user.image_url}}">
+        </a>
+        <div class="media-body">
+            <textarea class="form-control" placeholder="Write comment..." ng-model="newCommentBody"></textarea>
+            <a class="btn btn-primary btn-sm" id="new-comment" ng-click="addComment()">Add comment</a>
+        </div>
+    </div>
 </div>
 </div>

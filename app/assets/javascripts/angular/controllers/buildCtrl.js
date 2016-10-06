@@ -99,7 +99,8 @@ angular.module('pageBuilder').controller("BuildCtrl", function($scope, $http, sa
       };
       var res = $http.post('/api/sites.json', data);
       res.success(function(data, status, headers, config) {
-  			alert("success");
+  			alert(data);
+        $location.path('/sites/'+data.id);
   		});
       res.error(function(data, status, headers, config) {
   			alert( "failure message: " + JSON.stringify({data: data}));
@@ -108,7 +109,6 @@ angular.module('pageBuilder').controller("BuildCtrl", function($scope, $http, sa
 
     $scope.froalaOptions = {
       height: 700,
-
       theme: 'gray',
       fontFamily: {
         "Roboto,sans-serif": 'Roboto',
@@ -119,8 +119,7 @@ angular.module('pageBuilder').controller("BuildCtrl", function($scope, $http, sa
       fontFamilySelection: true,
       tabSpaces: 4,
       language: 'ru',
-
-      imageUploadURL: '	https://api.cloudinary.com/v1_1/page-builder/image/upload',
+    //  imageUploadURL: '	https://api.cloudinary.com/v1_1/page-builder/image/upload',
 
       events : {
         'froalaEditor.contentChanged' : function(e, editor){
@@ -143,6 +142,5 @@ angular.module('pageBuilder').controller("BuildCtrl", function($scope, $http, sa
     $('.right-sidebar-toggle').click(function () {
         $('#right-sidebar').toggleClass('sidebar-open');
     });
-
 
 });

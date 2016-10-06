@@ -20,7 +20,6 @@ class Site < ApplicationRecord
   end
 
   def tag_list=(names)
-    # str = names.join(",")
     self.tags = names.split(",").map do |n|
       Tag.where(name: n.strip).first_or_create!
     end

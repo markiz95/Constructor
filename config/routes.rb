@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
   namespace :api, :defaults => { :format => :json } do
     resources :sites, except: [:new] do
       resources :pages, only: [:index, :create, :update, :show]
+      resources :comments, only: [:show, :create]
+      member do
+        put '/upviews' => 'sites#upviews'
+      end
     end
     resources :tags, only: :index
+    resources :users, only: :show
     resources :layouts, only: [:index, :create]
   end
 

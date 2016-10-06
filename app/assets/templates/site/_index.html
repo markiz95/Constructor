@@ -22,18 +22,20 @@
               <td class="project-title">
                 <a href="/sites/{{site.id}}">{{site.name}}</a>
                 <br />
-                <p><b>Created</b> {{site.created_at | timeAgo}}</p>
+                <small><b>Created</b> {{site.created_at | timeAgo}}</small>
+                <br />
+                <small><i class="fa fa-eye"></i> {{site.views}}</small>
               </td>
               <td class="project-tags">
                 <ul class="tag-list" style="padding: 0" > <!-- -->
-                  <li ng-repeat="tag in site.tags"><a href=""><i class="fa fa-tag"></i>{{tag.name}}</a></li>
+                  <li ng-repeat="tag in site.tags"><a href=""><i class="fa fa-tag"></i> {{tag.name}}</a></li>
                 </ul>
               </td>
               <td class="project-people">
-                <a href=""><img alt="image" class="img-circle" src="{{ site.user.image_url }}"></a>
+                <a href="/users/{{site.user.id}}"><img alt="image" class="img-circle" src="{{ site.user.image_url }}"></a>
               </td>
               <td class="project-actions">
-                  <a href="/sites/{{site.id}}" class="btn btn-white btn-sm"><i class="fa fa-eye"></i> View </a>
+                  <a href="/sites/{{site.id}}" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
                   <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
                   <a href="#" class="btn btn-white btn-sm" ng-click="deleteSite(site.id)"><i class="fa fa-trash"></i> Delete </a>
               </td>

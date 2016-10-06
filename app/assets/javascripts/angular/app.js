@@ -1,4 +1,6 @@
-angular.module('pageBuilder', ['ui.router', 'templates', 'froala', 'xeditable', 'ui.sortable', 'ngSanitize', 'yaru22.angular-timeago'])
+angular.module('pageBuilder',
+      ['ui.router', 'templates', 'froala', 'xeditable', 'ui.sortable',
+      'ngSanitize', 'yaru22.angular-timeago', 'angular-jqcloud'])
     .config(
       function($stateProvider, $urlRouterProvider, $locationProvider) {
 
@@ -6,7 +8,13 @@ angular.module('pageBuilder', ['ui.router', 'templates', 'froala', 'xeditable', 
           .state('root', {
             url: '/',
             templateUrl: '_home.html',
-            controller: 'SiteCtrl'
+            controller: 'SiteViewCtrl'
+          })
+
+          .state('user', {
+            url: '/users/{userId}',
+            templateUrl: '_user.html',
+            controller: 'UserCtrl'
           })
 
           .state('builder', {
@@ -27,11 +35,21 @@ angular.module('pageBuilder', ['ui.router', 'templates', 'froala', 'xeditable', 
             controller: 'SiteViewCtrl'
           })
 
-          .state('new Site', {
+          .state('new', {
             url: '/sites/new',
             templateUrl: 'site/_new.html',
             controller: 'SiteCtrl'
-          });
+          })
+
+          .state('tag', {
+            url: '/sites/{tag}',
+            templateUrl: 'site/_index.html',
+            controller: function($stateParams, $scope, $http){
+              $http.get('/api/sites.json',{ params: { tag: $stateParams.tag } })
+                .then(function(response){
+                  $scope.sites = response.data;
+                });
+           }});
 
           $locationProvider.html5Mode({
              enabled: true,

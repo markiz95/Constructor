@@ -3,12 +3,14 @@
 //= require angular
 //= require angular-ui-router
 //= require angular-timeago
+//= require jqcloud2
 //= require angular-rails-templates
 //= require froala_editor.min.js
 //= require bootstrap-sprockets
 //= require pace/pace.min.js
 //= require metisMenu/jquery.metisMenu.js
 //= require slimscroll/jquery.slimscroll.min.js
+//= require sparkline/jquery.sparkline.min.js
 //= require_tree .
 //= require_tree ../templates
 // Include other plugins.
