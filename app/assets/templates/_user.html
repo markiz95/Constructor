@@ -59,7 +59,7 @@
     <div class="ibox-title">
         <h5>All projects assigned to this account</h5>
         <div class="ibox-tools">
-            <a href="/sites/new" class="btn btn-primary btn-xs">Create new project</a>
+            <a href="/sites/new" permission permission-only="'user'" class="btn btn-primary btn-xs">Create new project</a>
         </div>
     </div>
     <div class="ibox-content">
@@ -85,8 +85,8 @@
               </td>
               <td class="project-actions">
                   <a href="/sites/{{site.id}}" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                  <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                  <a href="#" class="btn btn-white btn-sm" ng-click="deleteSite(site.id)"><i class="fa fa-trash"></i> Delete </a>
+                  <a href="#" class="btn btn-white btn-sm" permission permission-only="['author', 'admin']"><i class="fa fa-pencil"></i> Edit </a>
+                  <a href="#" class="btn btn-white btn-sm" permission permission-only="['author', 'admin']" ng-click="deleteSite(site.id)"><i class="fa fa-trash"></i> Delete </a>
               </td>
             </tr>
           </tbody>

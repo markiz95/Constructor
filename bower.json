@@ -6,7 +6,9 @@
       "angular-ui-router": "latest",
       "angular-animate": "latest",
       "angular-timeago": "latest",
-      "jqcloud2": "latest"
+      "jqcloud2": "latest",
+      "angular-cookies": "latest",
+      "angular-messages": "latest"
     }
   },
   "vendor": {

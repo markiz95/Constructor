@@ -43,11 +43,11 @@
             <small class="text-muted">{{comment.created_at | date : format : mediumDate}}</small>
         </div>
     </div>
-    <div class="social-comment">
+    <div class="social-comment" permission permission-only="'user'">
         <a href="" class="pull-left">
-            <img alt="image" src="{{site.user.image_url}}">
+            <img alt="image" src="{{current_user.image_url}}">
         </a>
-        <div class="media-body">
+        <div class="media-body" >
             <textarea class="form-control" placeholder="Write comment..." ng-model="newCommentBody"></textarea>
             <a class="btn btn-primary btn-sm" id="new-comment" ng-click="addComment()">Add comment</a>
         </div>

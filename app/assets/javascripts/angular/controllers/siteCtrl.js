@@ -18,9 +18,12 @@ angular.module('pageBuilder').controller("SiteCtrl",  function($scope, $location
   $scope.siteName = "My Site";
 
   $scope.toBuilder = function() {
-    $location.path("/builder");
-    sampleService.setSiteName($scope.siteName);
-    sampleService.setTags($("#myTags").tagit("assignedTags"));
+    if($scope.siteName.length > 0){
+      $location.path("/builder");
+      sampleService.setSiteName($scope.siteName);
+      sampleService.setTags($("#myTags").tagit("assignedTags"));
+    }
+
   };
 
 })

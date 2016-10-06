@@ -1,4 +1,6 @@
-angular.module('pageBuilder').controller("UserCtrl", function($scope, $http, $stateParams){
+angular.module('pageBuilder')
+  .controller("UserCtrl",
+   function($scope, $http, $stateParams){
 
   $http.get('/api/users/'+$stateParams.userId+'.json')
     .then(function(response){
@@ -15,6 +17,5 @@ angular.module('pageBuilder').controller("UserCtrl", function($scope, $http, $st
       $scope.totalViews = views;
       $scope.commentsCount = comments.length;
     });
-
 
 })

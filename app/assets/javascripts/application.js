@@ -2,7 +2,9 @@
 //= require jquery-ui
 //= require angular
 //= require angular-ui-router
+//= require angular-permission
 //= require angular-timeago
+//= require angular-messages
 //= require jqcloud2
 //= require angular-rails-templates
 //= require froala_editor.min.js
