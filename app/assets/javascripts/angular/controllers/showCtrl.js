@@ -1,8 +1,8 @@
 angular.module('pageBuilder')
-  .controller("ShowCtrl",  function($scope, $http, $stateParams) {
+  .controller("ShowCtrl",  function($scope, $http, $stateParams, $cookies) {
 
   $scope.newCommentBody = "";
-
+  $scope.userImage = $cookies.get('user_image')
   $http.get('/api/sites/'+$stateParams.id+'.json')
     .then(function(response){
       $scope.site = response.data;

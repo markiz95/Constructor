@@ -18,4 +18,12 @@ angular.module('pageBuilder')
       $scope.commentsCount = comments.length;
     });
 
+  $scope.deleteSite = function(site){
+    $http.delete('/api/sites/'+site.id)
+      .then(function(response){
+        var index = $scope.sites.indexOf(site);
+        $scope.sites.splice(index,1);
+      });
+  };
+
 })

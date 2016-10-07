@@ -36,8 +36,8 @@
               </td>
               <td class="project-actions">
                   <a href="/sites/{{site.id}}" class="btn btn-white btn-sm" ><i class="fa fa-folder"></i> View </a>
-                  <a href="#" class="btn btn-white btn-sm" permission permission-only="'admin'"><i class="fa fa-pencil"></i> Edit </a>
-                  <a href="#" class="btn btn-white btn-sm" ng-click="deleteSite(site.id)" permission permission-only="'admin'"><i class="fa fa-trash"></i> Delete </a>
+                  <a href="/sites/{{site.id}}/builder" class="btn btn-white btn-sm" permission permission-only="'admin'"><i class="fa fa-pencil"></i> Edit </a>
+                  <a href="#" class="btn btn-white btn-sm" ng-click="deleteSite(site)" permission permission-only="'admin'"><i class="fa fa-trash"></i> Delete </a>
               </td>
             </tr>
           </tbody>

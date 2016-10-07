@@ -1,6 +1,15 @@
 angular.module('pageBuilder',
-  ['ui.router', 'permission', 'permission.ui','templates', 'froala', 'xeditable', 'ui.sortable',
-   'ngSanitize', 'yaru22.angular-timeago', 'angular-jqcloud', 'ngCookies', 'ngMessages'])
+  ['ui.router',
+   'permission',
+   'permission.ui',
+   'templates',
+   'froala',
+   'xeditable', 'ui.sortable',
+   'ngSanitize',
+   'yaru22.angular-timeago',
+   'angular-jqcloud',
+   'ngCookies',
+   'ngMessages'])
     .config(
       function($stateProvider, $urlRouterProvider, $locationProvider) {
 
@@ -41,9 +50,45 @@ angular.module('pageBuilder',
             controller: 'ShowCtrl'
           })
 
+          .state('search', {
+            url: '/search',
+            templateUrl: '_search.html',
+            controller: 'oneMore',
+            resolve: {
+              results: function(searches, sampleService){
+                  return searches.get(sampleService.getSearch());
+              }
+            },
+          })
+
+          .state('edit', {
+            url: '/sites/{id:int}/builder',
+            templateUrl: '_builder.html',
+            controller: 'EditCtrl',
+            resolve: {
+              site: function($stateParams,sites){
+                  return sites.get($stateParams.id);
+              }
+            },
+            data: {
+              permissions: {
+                except: 'guest',
+                redirectTo: '403'
+              }
+            }
+          })
+
           .state('403', {
             url: '/403',
             templateUrl: '_403.html'
+          })
+
+          .state('logout', {
+            url: '/logout'
+          })
+
+          .state('auth', {
+            url: '/auth/:provider'
           })
 
           .state('404', {
@@ -74,10 +119,10 @@ angular.module('pageBuilder',
             }
          });
 
-        //  $urlRouterProvider.otherwise( function($injector) {
-        //     var $state = $injector.get("$state");
-        //     $state.go('404');
-        //   });
+         $urlRouterProvider.otherwise( function($injector) {
+            var $state = $injector.get("$state");
+            $state.go('404');
+          });
 
           $locationProvider.html5Mode({
              enabled: true,
@@ -101,8 +146,8 @@ angular.module('pageBuilder',
         PermPermissionStore.definePermission('user', function () {
           return id !== undefined;
         });
-        PermPermissionStore.definePermission('author', function () {
-          return role == 'admin';
+        PermPermissionStore.definePermission('admin', function () {
+          return role === 'admin';
         });
         PermPermissionStore.definePermission('author', function () {
           return id == $stateParams.userId;
@@ -114,11 +159,19 @@ angular.module('pageBuilder',
       .service('sampleService', function(){
         var tags = [];
         var siteName = 'My site';
+        var searching = "";
+
         this.setSiteName = function(data){
           siteName = data;
         }
         this.getSiteName = function(){
           return siteName;
+        }
+        this.setSearch = function(data){
+          searching = data;
+        }
+        this.getSearch = function(){
+          return searching;
         }
         this.setTags = function(data){
           tags = data;

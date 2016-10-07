@@ -41,11 +41,15 @@ gem 'omniauth-vkontakte'
 # json
 gem "responders"
 
+# search
+gem 'sunspot_rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'sunspot_solr'
   gem 'byebug', platform: :mri
 end
 

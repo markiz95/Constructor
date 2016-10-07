@@ -1,6 +1,6 @@
 class Api::SitesController < ApplicationController
   respond_to :json
-  before_action :find_site, only: [:upviews, :show, :destroy]
+  before_action :find_site, only: [:upviews, :show, :destroy, :update]
   skip_before_action :verify_authenticity_token
 
   def index
@@ -10,7 +10,8 @@ class Api::SitesController < ApplicationController
       sites = Site.all
     end
     respond_with sites.as_json(
-      include: [{ user: { only: [:image_url, :name, :id] } }, { tags: { only: :name } }])
+      include: [{ user: { only: [:image_url, :name, :id] } },
+                { tags: { only: :name } }])
   end
 
   def create
@@ -21,15 +22,23 @@ class Api::SitesController < ApplicationController
   def show
     respond_with @site.as_json(
       include: [{ user: { only: [:image_url, :name, :id] } },
-          { tags: { only: :name } }, :pages, comments: { include: :user } ])
+                { tags: { only: :name } }, :pages, comments: { include: :user } ])
   end
 
-  def updated
-    respond_with Site.update(params[:id], site_params)
+  def update
+    @site.update_attributes(site_params)
+    respond_with :api, @site
   end
 
   def upviews
     @site.increment!(:views)
+  end
+
+  def search
+    @search = Sunspot.search(Site) do
+      fulltext params[:search]
+    end
+    respond_with @search.results
   end
 
   def destroy
@@ -37,6 +46,7 @@ class Api::SitesController < ApplicationController
   end
 
   private
+
   def site_params
     params.require(:site)
     .permit(:name, :tag_list, :tag_list => [], pages_attributes: [:id, :name, :body])

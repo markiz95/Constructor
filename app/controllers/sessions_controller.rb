@@ -2,16 +2,12 @@ class SessionsController < ApplicationController
   respond_to :json
 
   def create
-    begin
-      @user = User.from_omniauth(request.env['omniauth.auth'])
-      session[:user_id] = @user.id
-      cookies[:user_id] = @user.id
+    @user = User.from_omniauth(request.env['omniauth.auth'])
+    session[:user_id] = @user.id
+    cookies[:user_id] = @user.id
+    cookies[:user_role] = @user.role
+    cookies[:user_image] = @user.image_url
 
-
-      flash[:success] = "Welcome, #{@user.name}!"
-    rescue
-      flash[:warning] = "There was an error while trying to authenticate you..."
-    end
     redirect_to root_path
   end
 
@@ -19,17 +15,11 @@ class SessionsController < ApplicationController
     if current_user
       session.delete(:user_id)
       cookies.delete(:user_id)
-      flash[:success] = 'See you!'
+      cookies.delete(:user_role)
+      cookies.delete(:user_image)
     end
     redirect_to root_path
   end
 
-  def failure
-    redirect_to root_url, alert: "Authentication failed, please try again."
-  end
-
-  def me
-    respond_with current_user
-  end
 
 end

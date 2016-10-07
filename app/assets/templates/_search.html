@@ -1,0 +1,27 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-9">
+        <h2>	Search Page</h2>
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+<div class="row">
+  <div class="col-lg-12">
+    <div class="ibox float-e-margins">
+      <div class="ibox-content">
+        <h2>
+            {{count}} results found for: <span class="text-navy">“{{ input }}”</span>
+        </h2>
+      <div class="hr-line-dashed" ></div>
+      <div class="search-result" ng-repeat-start="result in results">
+          <h3><a ng-href="/sites/{{result.id}}">{{ result.name }}</a></h3>
+          <a href="#" class="search-link">http://localhost/sites/{{result.id}}</a>
+          <p>
+              Finding using comments, pages, tags and self name.
+          </p>
+      </div>
+      <div class="hr-line-dashed" ng-repeat-end></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

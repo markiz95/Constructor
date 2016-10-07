@@ -4,10 +4,11 @@ angular.module('pageBuilder')
   $scope.words = [];
   $scope.colors = ["#800026", "#bd0026", "#e31a1c", "#fc4e2a", "#fd8d3c", "#feb24c", "#fed976"];
 
-  $scope.deleteSite = function(id){
-    $http.delete('/api/sites/'+id)
+  $scope.deleteSite = function(site){
+    $http.delete('/api/sites/'+site.id)
       .then(function(response){
-        updateSites();
+        var index = $scope.sites.indexOf(site);
+        $scope.sites.splice(index,1);
       });
   };
 

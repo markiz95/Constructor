@@ -1,4 +1,4 @@
-angular.module('pageBuilder').controller("BuildCtrl", function($scope, $http, sampleService) {
+angular.module('pageBuilder').controller("BuildCtrl", function($scope, $http, sampleService, $location) {
 
     var span = document.getElementsByClassName("close")[0];
     var modal = document.getElementById('myModal');
@@ -97,14 +97,12 @@ angular.module('pageBuilder').controller("BuildCtrl", function($scope, $http, sa
           pages_attributes: $scope.pages
         }
       };
-      var res = $http.post('/api/sites.json', data);
-      res.success(function(data, status, headers, config) {
-  			alert(data);
-        $location.path('/sites/'+data.id);
-  		});
-      res.error(function(data, status, headers, config) {
-  			alert( "failure message: " + JSON.stringify({data: data}));
-  		});
+      $http.post('/api/sites.json', data)
+      .then(function sucess(response) {
+        $location.path('/sites/'+response.data.id);
+  		}, function error(response){
+        alert("error: " +response.status);
+      });
     };
 
     $scope.froalaOptions = {
