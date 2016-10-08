@@ -35,7 +35,7 @@ class Api::SitesController < ApplicationController
   end
 
   def search
-    @search = Sunspot.search(Site) do
+    @search = Sunspot.search(Site) do #  Site.search do
       fulltext params[:search]
     end
     respond_with @search.results
