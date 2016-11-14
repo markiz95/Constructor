@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Create sites using WYSWIG editor.
 
-Things you may want to cover:
+See it:
+https://page-builder-true.herokuapp.com/ 
+(When login or logout please refresh the page, I try to fix this in future)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+RoR 5 + AngularJS + postgreSQL
